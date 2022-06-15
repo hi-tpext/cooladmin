@@ -82,11 +82,12 @@ input:-webkit-autofill {
   width: calc(100% - 220px);
 }
 .page-layout__topbar {
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 .page-layout__process {
   padding: 0 10px;
-  margin-bottom: 5px;
+  background: #fff;
+  border-bottom: 1px solid #d8dce5;
 }
 .page-layout__container {
   width: 100%;
@@ -372,13 +373,13 @@ i.mdi-set,
 .app-process {
   display: flex;
   align-items: center;
-  height: 30px;
+  height: 32px;
   position: relative;
 }
 .app-process__left, .app-process__right {
   background-color: #fff;
-  height: 30px;
-  line-height: 30px;
+  height: 26px;
+  line-height: 26px;
   padding: 0 2px;
   border-radius: 3px;
   cursor: pointer;
@@ -412,8 +413,8 @@ i.mdi-set,
 .app-process__item {
   display: inline-flex;
   align-items: center;
-  height: 30px;
-  line-height: 30px;
+  height: 26px;
+  line-height: 26px;
   padding: 0 10px;
   background-color: #fff;
   font-size: 12px;
@@ -421,6 +422,7 @@ i.mdi-set,
   color: #909399;
   cursor: pointer;
   position: relative;
+  border: 1px solid #e6e8ec;
 }
 .app-process__item:last-child {
   margin-right: 0;
