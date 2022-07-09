@@ -4,8 +4,6 @@
 
 ### 部分样式和组件来源于 `cool-admin` : <https://github.com/cool-team-official/cool-admin-vue>
 
-# H+admin后台模板样式
-
 ## 关于
 
 替换默认的:`/admin/admin/index`主体页面样式和登录页面`/admin/admin/login`样式
