@@ -22,8 +22,7 @@
 }
 
 html,
-body
-{
+body {
     height: 100%;
     width: 100%;
 }
@@ -78,6 +77,35 @@ $--font-path: "../lib/theme-chalk/fonts";
 
 .clearfix:after {
     clear: both
+}
+
+body[data-theme='dark'] {
+    background-color: #1c1e2f;
+    color: #8c909a;
+}
+
+[data-theme=dark] .page-layout__process,
+[data-theme=dark] .app-process__left,
+[data-theme=dark] .app-process__right,
+[data-theme=dark] .app-process__item {
+    background-color: #292B3D;
+    color: #8c909a;
+}
+
+[data-theme=dark] .app-process__item,
+[data-theme=dark] .page-layout__process {
+    border-color: #8c909a;
+}
+
+[data-theme=dark] .app-process__item.active span,
+[data-theme=dark] .app-process__item .el-icon-close {
+    color: #ddd;
+}
+
+[data-theme=dark] .el-dropdown-menu {
+    background-color: #1c1e2f;
+    color: #8c909a;
+    border-color: #8c909a;
 }
 
 .page-layout {

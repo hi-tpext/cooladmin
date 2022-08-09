@@ -14,7 +14,8 @@
 </head>
 
 <body>
-  <div id="app" class="hidden" element-loading-background="rgba(0, 0, 0, 0.3)">
+  <div id="app" class="hidden"
+    :element-loading-background="themeInfo.name=='black' ? 'rgba(0, 0, 0, 0.6)' : 'rgba(0, 0, 0, 0.3)'">
     <div class="page-layout" :class="{ collapse: menuCollapse }">
       <!-- 遮罩层 -->
       <div class="page-layout__mask" @click="collapseMenu(true)"></div>
@@ -221,7 +222,8 @@
         </div>
 
         <!-- 页面视图 -->
-        <div class="page-layout__container" v-loading="iframeLoading">
+        <div class="page-layout__container" v-loading="iframeLoading"
+          :element-loading-background="themeInfo.name=='black' ? 'rgba(0, 0, 0, 0.6)' : 'rgba(0, 0, 0, 0.3)'">
           <div class="page-layout__view">
             <iframe @load="iframeLoading=false" :ref="`iframe-${item.id}`" :class="{ hidden: activeTabId != item.id}"
               v-for="(item, index) in processList" :key="index" :name="'iframe'+index" width="100%" height="100%"
@@ -409,6 +411,17 @@
           localStorage.setItem('index_theme', JSON.stringify(that.themeInfo));
           // 设置 css 变量
           document.getElementsByTagName("body")[0].style.setProperty("--color-primary", color);
+
+          var isDark = name == 'black' ? 'dark' : 'default';
+          localStorage.setItem('site_theme', isDark);
+          $('body').attr('data-theme', isDark);
+          for (var i in this.processList) {
+            var item = this.processList[i];
+            var el = this.$refs[`iframe-${item.id}`][0];
+            if (el) {
+              $(el).contents().find('body').attr('data-theme', isDark);
+            }
+          }
         },
         /*tab操作*/
         activeItem(item, index) {
