@@ -138,7 +138,7 @@ function getSubMenu(treeObj) {
                 children = [treeObj[i]];
             }
         }
-        if (children.length) {
+        if (children && children.length) {
             leftMenu = leftMenu.concat(children);
         }
         if (!treeObj[i].is_home) {
